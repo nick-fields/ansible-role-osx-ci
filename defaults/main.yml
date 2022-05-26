@@ -4,6 +4,7 @@ ci_user_group: ci_user
 ci_user_default_keychain: login.keychain
 cask_packages: ['adoptopenjdk/openjdk/adoptopenjdk8']
 ruby_gems: ['fastlane', 'cocoapods']
+default_node_lts_major_version: 16
 
 # Additional variables:
 

@@ -1,7 +1,7 @@
 galaxy_info:
-  role_name: osx-ci
+  role_name: osx_ci
   author: ispasov
-  description: Ansible role that installs common CI tools on OSX
+  description: Forked Ansible role that installs common CI tools on OSX with arm64/M1 support
   company: MacStadium, Inc.
 
   license: license (GPLv3)
@@ -11,15 +11,20 @@ galaxy_info:
   platforms:
     - name: MacOSX
       versions:
-        - '10.13'
-        - '10.14'
+        - 'all'
 
   galaxy_tags:
     - 'mac'
     - 'osx'
     - 'highsierra'
     - 'mojave'
-    - 'java'
+    - 'catalina'
+    - 'bigsur'
+    - 'monterey'
+    - 'm1'
+    - 'arm64'
+    - 'homebrew'
+    - 'brew'
     - 'jdk'
     - 'tools'
     - 'ci'

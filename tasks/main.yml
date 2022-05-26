@@ -34,7 +34,7 @@
     homebrew.sh {{ ansible_become_user | default(ansible_ssh_user) }}
     {{ ansible_become_pass }}
   args:
-    creates: '/usr/local/bin/brew'
+    creates: "/usr/local/bin/brew"
 
 - name: Update Homebrew
   homebrew:
@@ -45,6 +45,8 @@
     name: homebrew/cask-versions
 
 - name: Installing homebrew cask packages
+  environment:
+    PATH: /opt/homebrew/bin:{{ ansible_env.PATH }}
   x_homebrew_cask:
     name: "{{ item }}"
     sudo_password: "{{ ansible_become_pass }}"
@@ -62,7 +64,7 @@
     name: "{{ homebrew_packages }}"
   when: homebrew_packages is defined
 
-- name: Installing node 10 LTS
+- name: Installing node {{ default_node_lts_major_version }} LTS
   homebrew:
-    name: node@10
-  notify: Link Node 10 LTS
+    name: node@{{ default_node_lts_major_version }}
+  notify: Link Node {{ default_node_lts_major_version }} LTS
