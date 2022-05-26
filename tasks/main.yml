@@ -9,6 +9,12 @@
     name: "{{ ci_user }}"
     uid: "{{ ci_user_uid }}"
     group: "{{ ci_user_group }}"
+    groups:
+      - Admin
+    shell: "{{ ci_user_shell }}"
+    hidden: no
+    force: yes
+    password: "{{ ci_user_default_keychain_password }}"
 
 - name: Create ci user keychain
   become: true
