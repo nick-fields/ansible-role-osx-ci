@@ -1,5 +1,5 @@
-- name: Link Node 10 LTS
+- name: Link Node {{ default_node_lts_major_version }} LTS
   homebrew:
-    name: node@10
+    name: node@{{ default_node_lts_major_version }}
     state: linked
     install_options: force
