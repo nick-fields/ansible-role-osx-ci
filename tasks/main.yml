@@ -8,9 +8,9 @@
   user:
     name: "{{ ci_user }}"
     uid: "{{ ci_user_uid }}"
-    group: "{{ ci_user_group }}"
     groups:
       - Admin
+      - "{{ ci_user_group }}"
     shell: "{{ ci_user_shell }}"
     hidden: no
     force: yes
