@@ -47,10 +47,6 @@
   homebrew:
     update_homebrew: true
 
-- name: Install cask versions
-  homebrew_tap:
-    name: homebrew/cask-versions
-
 - name: Installing homebrew cask packages
   environment:
     PATH: /opt/homebrew/bin:{{ ansible_env.PATH }}
